@@ -38,6 +38,7 @@ public class JobsDbContext : DbContext
             job.Property(c => c.Description);
             job.Property(c => c.Priority);
             job.Property(c => c.CreationDate);
+            job.Ignore(c => c.Resume);
                       
 
         }); 
