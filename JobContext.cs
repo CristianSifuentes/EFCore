@@ -3,12 +3,12 @@ using EFCore.Models;
 
 namespace EFCore;
 
-public class JobsContext : DbContext
+public class JobsDbContext : DbContext
 {
     DbSet<Category> categories;
     DbSet<Job> jobs;
 
-    public JobsContext(DbContextOptions options) : base(options) {
+    public JobsDbContext(DbContextOptions options) : base(options) {
         
     }
 
