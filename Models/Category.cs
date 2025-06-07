@@ -12,9 +12,9 @@ public class Category
     public string Name { get; set; }
     public string Description { get; set; }
     public int Weight { get; set; }
-    public int Secuencial { get; set; }
-    public string OtherField { get; set; }
-    public string OtherField2 { get; set; }
+    // public int Secuencial { get; set; }
+    // public string OtherField { get; set; }
+    // public string OtherField2 { get; set; }
 
     public virtual ICollection<Job> Jobs { get; set; }
 

@@ -4,6 +4,7 @@ using EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(JobsDbContext))]
-    partial class JobsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250607224618_07062016_02")]
+    partial class _07062016_02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,22 +47,6 @@ namespace EFCore.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Category", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = new Guid("9b2ee223-763a-486a-b04d-2d0203e1e714"),
-                            Description = "Description 1",
-                            Name = "Pending",
-                            Weight = 20
-                        },
-                        new
-                        {
-                            CategoryId = new Guid("f15d905a-ffd8-4f44-b63c-22234605f353"),
-                            Description = "Desctiption 2",
-                            Name = "Personal",
-                            Weight = 20
-                        });
                 });
 
             modelBuilder.Entity("EFCore.Models.Job", b =>
@@ -75,8 +62,8 @@ namespace EFCore.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Priority")
                         .HasColumnType("int");
@@ -91,16 +78,6 @@ namespace EFCore.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Job", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            JobId = new Guid("aff00f04-bc5f-4078-b7e0-f84d2e409f11"),
-                            CategoryId = new Guid("9b2ee223-763a-486a-b04d-2d0203e1e714"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Priority = 0,
-                            Title = "Public Services Payment"
-                        });
                 });
 
             modelBuilder.Entity("EFCore.Models.Job", b =>

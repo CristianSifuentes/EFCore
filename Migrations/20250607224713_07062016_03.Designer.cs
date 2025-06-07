@@ -4,6 +4,7 @@ using EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(JobsDbContext))]
-    partial class JobsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250607224713_07062016_03")]
+    partial class _07062016_03
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,8 +78,8 @@ namespace EFCore.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Priority")
                         .HasColumnType("int");
@@ -91,16 +94,6 @@ namespace EFCore.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Job", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            JobId = new Guid("aff00f04-bc5f-4078-b7e0-f84d2e409f11"),
-                            CategoryId = new Guid("9b2ee223-763a-486a-b04d-2d0203e1e714"),
-                            CreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Priority = 0,
-                            Title = "Public Services Payment"
-                        });
                 });
 
             modelBuilder.Entity("EFCore.Models.Job", b =>
