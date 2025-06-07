@@ -38,6 +38,20 @@ namespace EFCore.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<string>("OtherField")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherField2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Secuencial")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
                     b.HasKey("CategoryId");
 
                     b.ToTable("Category", (string)null);
@@ -56,6 +70,10 @@ namespace EFCore.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Field")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

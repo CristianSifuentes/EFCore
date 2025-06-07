@@ -14,17 +14,16 @@ public class Job
 
     // [Required]
     // [MaxLength(150)]
-    public string Title { get; set; }
-
-
-    public string Description { get; set; }
+    public required string Title { get; set; }
+    public required string Description { get; set; }
+    public required string Field { get; set; }
     public virtual Priority Priority { get; set; }
     public DateTime CreationDate { get; set; }
-    public virtual Category Category { get; set; }
+    public virtual required Category Category { get; set; }
  
     // Title + description
     // [NotMapped]
-    public string Resume { get; set; }
+    public required string Resume { get; set; }
 
 }
 
