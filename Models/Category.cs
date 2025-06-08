@@ -1,5 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 namespace EFCore.Models;
 
 public class Category
@@ -16,6 +17,7 @@ public class Category
     // public string OtherField { get; set; }
     // public string OtherField2 { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Job> Jobs { get; set; }
 
 }

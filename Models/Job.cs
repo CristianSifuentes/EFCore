@@ -29,7 +29,7 @@ public class Job
 
 public enum Priority
 {
-    High,
+    Low,
     Medium,
-    Low
+    High
 }
