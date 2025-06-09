@@ -1,6 +1,6 @@
 # Entity Framework Core: Modern ORM for Relational Databases
 
-![Entity Framework Core Logo](https://learn.microsoft.com/en-us/ef/core/media/ef-core-logo.svg)
+![Entity Framework Core Logo](https://codeopinion.com/wp-content/uploads/2017/10/Bitmap-MEDIUM_Entity-Framework-Core-Logo_2colors_Square_Boxed_RGB.png)
 
 ## Table of Contents
 
