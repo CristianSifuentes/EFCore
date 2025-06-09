@@ -72,8 +72,8 @@ Entity Framework Core (EF Core) is an open-source, cross-platform object-relatio
 | **2021** | **EF Core 6.0**  | - Long-term support (LTS) version.<br>- Improved performance and compiled models. |
 | **2022** | **EF Core 7.0**  | - Added bulk updates, JSON column support, and interceptors.     |
 | **2023** | **EF Core 8.0**  | - Enhanced schema management and broader database provider compatibility. |
-| **2024** | **EF Core 9.0**  | ExecuteUpdate/Delete methods, improved scaffolding |
-| **2025** | **EF Core 10.0** | Cross-provider schema sync, tool updates (Preview) |
+| **2024** | **EF Core 9.0**  | - ExecuteUpdate/Delete methods, improved scaffolding |
+| **2025** | **EF Core 10.0** | - Cross-provider schema sync, tool updates (Preview) |
 
 
 ---
