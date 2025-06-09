@@ -14,6 +14,7 @@
 - [Impact and Challenges](#impact-and-challenges)
 - [Takeaways](#takeaways)
 
+
 ---
 
 ## What is Entity Framework Core?
