@@ -1,6 +1,6 @@
 # Entity Framework Core: Modern ORM for Relational Databases
 
-![Entity Framework Core Logo](https://learn.microsoft.com/en-us/ef/core/media/ef-core-logo.svg)
+![Entity Framework Core Logo](https://codeopinion.com/wp-content/uploads/2017/10/Bitmap-MEDIUM_Entity-Framework-Core-Logo_2colors_Square_Boxed_RGB.png)
 
 ## Table of Contents
 
@@ -8,9 +8,12 @@
 - [Key Features](#key-features)
 - [How Entity Framework Core Works](#how-entity-framework-core-works)
 - [Timeline: Versions and Milestones](#timeline-versions-and-milestones)
+- [EF Core Features Every Expert Must Know](#ef-core-features-every-expert-must-know)
+- [Most Important EF Core Commands](#most-important-ef-core-commands)
 - [Supported Platforms](#supported-platforms)
 - [Impact and Challenges](#impact-and-challenges)
 - [Takeaways](#takeaways)
+
 
 ---
 
@@ -69,6 +72,50 @@ Entity Framework Core (EF Core) is an open-source, cross-platform object-relatio
 | **2021** | **EF Core 6.0**  | - Long-term support (LTS) version.<br>- Improved performance and compiled models. |
 | **2022** | **EF Core 7.0**  | - Added bulk updates, JSON column support, and interceptors.     |
 | **2023** | **EF Core 8.0**  | - Enhanced schema management and broader database provider compatibility. |
+| **2024** | **EF Core 9.0**  | - ExecuteUpdate/Delete methods, improved scaffolding |
+| **2025** | **EF Core 10.0** | - Cross-provider schema sync, tool updates (Preview) |
+
+
+---
+
+## EF Core Features Every Expert Must Know
+
+- `ExecuteUpdate` / `ExecuteDelete` for bulk operations
+- Shadow Properties
+- Temporal Tables support
+- Owned Types (Value Objects)
+- Global Query Filters
+- Query Tagging for diagnostics
+- Raw SQL binding to DbSet<T>
+- Model-level value conversion
+- JSON column mapping
+
+
+
+
+---
+
+## Most Important EF Core Commands
+
+```bash
+# Create a new migration
+dotnet ef migrations add InitialCreate
+
+# Apply all migrations
+dotnet ef database update
+
+# Remove last migration
+dotnet ef migrations remove
+
+# Drop the database
+dotnet ef database drop
+
+# Generate SQL script from migrations
+dotnet ef migrations script
+
+# Scaffold from existing database
+dotnet ef dbcontext scaffold "connection-string" Microsoft.EntityFrameworkCore.SqlServer -o Models
+```
 
 ---
 
