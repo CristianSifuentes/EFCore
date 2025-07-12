@@ -125,7 +125,7 @@ dotnet ef dbcontext scaffold "connection-string" Microsoft.EntityFrameworkCore.S
 
 ```bash
 # 1️⃣ Install global CLI once
- dotnet tool install --global dotnet-ef
+dotnet tool install --global dotnet-ef
 
 # 2️⃣ Add latest EF Core packages (preview for EF 10)
 dotnet add package Microsoft.EntityFrameworkCore               \
@@ -133,8 +133,8 @@ dotnet add package Microsoft.EntityFrameworkCore               \
 dotnet add package Microsoft.EntityFrameworkCore.Design         --version 10.0.0-preview.*
 
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer      # SQL Server
- dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL        # PostgreSQL
- dotnet add package Microsoft.EntityFrameworkCore.InMemory       # Testing
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL        # PostgreSQL
+dotnet add package Microsoft.EntityFrameworkCore.InMemory       # Testing
 ```
 
 ---
