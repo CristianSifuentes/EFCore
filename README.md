@@ -10,6 +10,8 @@
 - [Timeline: Versions and Milestones](#timeline-versions-and-milestones)
 - [EF Core Features Every Expert Must Know](#ef-core-features-every-expert-must-know)
 - [Most Important EF Core Commands](#most-important-ef-core-commands)
+- [Bootstrapping](#bootstrapping)
+- [Creating and Evolving a Schema - Migrations](#creating-and-evolving-a-schema---migrations)
 - [Supported Platforms](#supported-platforms)
 - [Impact and Challenges](#impact-and-challenges)
 - [Takeaways](#takeaways)
@@ -118,6 +120,40 @@ dotnet ef dbcontext scaffold "connection-string" Microsoft.EntityFrameworkCore.S
 ```
 
 ---
+
+## Bootstrapping
+
+```bash
+# 1️⃣ Install global CLI once
+ dotnet tool install --global dotnet-ef
+
+# 2️⃣ Add latest EF Core packages (preview for EF 10)
+dotnet add package Microsoft.EntityFrameworkCore               \
+               --version 10.0.0-preview.*
+dotnet add package Microsoft.EntityFrameworkCore.Design         --version 10.0.0-preview.*
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer      # SQL Server
+ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL        # PostgreSQL
+ dotnet add package Microsoft.EntityFrameworkCore.InMemory       # Testing
+```
+
+---
+
+## Creating and Evolving a Schema - Migrations
+
+| Purpose                       | CLI (`dotnet ef`)                                      | PMC (VS)                             |
+| ----------------------------- | ------------------------------------------------------ | ------------------------------------ |
+| Add first migration        | dotnet ef migrations add InitialCreate                 | Add‑Migration InitialCreate          |
+| Custom folder              | --output-dir Infrastructure/Migrations                 | -OutputDir Infrastructure\Migrations |
+| Target context             | --context BillingContext                               | -Context BillingContext              |
+| Apply to DB                | dotnet ef database update                              | Update‑Database                      |
+|  Rollback                    | dotnet ef database update 20240424121500\_AddInvoices  | Update‑Database Previous             |
+| Remove last (not applied) | dotnet ef migrations remove                            | Remove‑Migration                     |
+| Script diff                | dotnet ef migrations script --idempotent -o deploy.sql | Script‑Migration -Idempotent         |
+| Bundle (CI/CD)             | dotnet ef migrations bundle --self-contained           | —    
+
+
+
 
 ## Supported Platforms
 
