@@ -13,9 +13,9 @@
 - [Bootstrapping](#bootstrapping)
 - [Creating and Evolving a Schema - Migrations](#creating-and-evolving-a-schema---migrations)
 - [Advanced Rename - Move](#advanced-rename---move)
-- [Database Operations - beyond migrations](#database-poperations---beyond-migrations)
+- [Database Operations - Beyond migrations](#database-operations---beyond-migrations)
 - [Reverse Engineering - Scaffold existing DB](#reverse‑engineering---scaffold-existing-db)
-- [Testing with - In Memory](#testing-with---in‑memory)
+- [Testing with - In Memory](#testing-with---in-memory)
 - [Supported Platforms](#supported-platforms)
 - [Impact and Challenges](#impact-and-challenges)
 - [Takeaways](#takeaways)
@@ -171,7 +171,7 @@ dotnet ef migrations add SplitModules \
 
 ---
 
-## Database Operations - beyond migrations
+## Database Operations - Beyond migrations
 
 - **Drop DB**  `dotnet ef database drop --force --no-build`
 - **Script model → empty DB**  `dotnet ef dbcontext script`
