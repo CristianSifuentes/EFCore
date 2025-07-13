@@ -14,7 +14,7 @@
 - [Creating and Evolving a Schema - Migrations](#creating-and-evolving-a-schema---migrations)
 - [Advanced Rename - Move](#advanced-rename---move)
 - [Database Operations - Beyond migrations](#database-operations---beyond-migrations)
-- [Reverse Engineering - Scaffold existing DB](#reverse‑engineering---scaffold-existing-db)
+- [Reverse Engineering - Scaffold existing DB](#reverse-engineering---scaffold-existing-db)
 - [Testing with - In Memory](#testing-with---in-memory)
 - [Supported Platforms](#supported-platforms)
 - [Impact and Challenges](#impact-and-challenges)
@@ -182,7 +182,7 @@ dotnet ef migrations add SplitModules \
 
 ---
 
-## Reverse‑Engineering - Scaffold existing DB
+## Reverse Engineering - Scaffold existing DB
 
 
 ```bash
