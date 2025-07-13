@@ -12,6 +12,10 @@
 - [Most Important EF Core Commands](#most-important-ef-core-commands)
 - [Bootstrapping](#bootstrapping)
 - [Creating and Evolving a Schema - Migrations](#creating-and-evolving-a-schema---migrations)
+- [Advanced Rename - Move](#advanced-rename---move)
+- [Database Operations - beyond migrations](#database-poperations---beyond-migrations)
+- [Reverse Engineering - Scaffold existing DB](#reverse‑engineering---scaffold-existing-db)
+- [Testing with - In Memory](#testing-with---in‑memory)
 - [Supported Platforms](#supported-platforms)
 - [Impact and Challenges](#impact-and-challenges)
 - [Takeaways](#takeaways)
@@ -93,8 +97,6 @@ Entity Framework Core (EF Core) is an open-source, cross-platform object-relatio
 - JSON column mapping
 
 
-
-
 ---
 
 ## Most Important EF Core Commands
@@ -153,7 +155,65 @@ dotnet add package Microsoft.EntityFrameworkCore.InMemory       # Testing
 | Bundle (CI/CD)             | dotnet ef migrations bundle --self-contained           | —    
 
 
+---
 
+## Advanced Rename - Move
+
+```bash
+# Rename table Customers → Clients
+dotnet ef migrations add RenameCustomerToClient \
+    -- --operations "RenameTable:OldName=Customers,NewName=Clients"
+
+# Save migration in custom namespace/folder
+dotnet ef migrations add SplitModules \
+    --output-dir Modules/Billing --namespace Billing.Migrations
+```
+
+---
+
+## Database Operations - beyond migrations
+
+- **Drop DB**  `dotnet ef database drop --force --no-build`
+- **Script model → empty DB**  `dotnet ef dbcontext script`
+- **Pending list**  `dotnet ef migrations list`
+- Provider override:
+  - SQL Server → `--connection "Server=.;TrustServerCertificate=True"`
+  - PostgreSQL → `--connection "Host=localhost;Username=app;Password=pwd"`
+
+---
+
+## Reverse‑Engineering - Scaffold existing DB
+
+
+```bash
+dotnet ef dbcontext scaffold \
+  "Host=localhost;Database=crm;Username=app;Pwd=pwd" \
+  Npgsql.EntityFrameworkCore.PostgreSQL \
+  --schema public,billing --table customers,invoices \
+  --context-dir Infrastructure \
+  --output-dir Infrastructure/Models \
+  --use-database-names --nullable --no-onconfiguring
+```
+
+*Add **``** if you prefer attributes over fluent API.*
+
+---
+## Testing with - In Memory
+ 
+
+```csharp
+var options = new DbContextOptionsBuilder<AppDbContext>()
+                 .UseInMemoryDatabase("UnitTest")
+                 .EnableDetailedErrors()
+                 .Options;
+
+using var ctx = new AppDbContext(options);
+ctx.Database.EnsureCreated();
+```
+
+*Seed with ****modelBuilder.Entity\<T>().HasData(...)**** or directly add in tests.*
+
+---
 
 ## Supported Platforms
 
