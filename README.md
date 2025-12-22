@@ -25,7 +25,7 @@
 
 ## What is Entity Framework Core?
 
-Entity Framework Core (EF Core) is an open-source, cross-platform object-relational mapper (ORM) for .NET. It simplifies database interactions by allowing developers to work with database objects using .NET classes and LINQ queries. EF Core supports multiple relational databases like SQL Server, PostgreSQL, MySQL, SQLite, and more.
+Entity Framework Core (EF Core) is an open-source, cross-platform object-relational mapper (ORM) for .NET. It simplifies database interactions by allowing developers to work with database objects using .NET classes and  [LINQ](https://github.com/CristianSifuentes/LINQ-s) queries. EF Core supports multiple relational databases like SQL Server, PostgreSQL, MySQL, SQLite, and more.
 
 ---
 
