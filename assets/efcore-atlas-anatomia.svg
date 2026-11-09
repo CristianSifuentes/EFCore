@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" width="1600" height="980" font-family="Segoe UI, Inter, Helvetica Neue, Arial, sans-serif" role="img" aria-labelledby="at ad">
+<title id="at">Anatomía de EF Core: el viaje de una consulta y de un SaveChanges</title>
+<desc id="ad">Diagrama en dos carriles. Arriba, una consulta LINQ atraviesa árbol de expresión, caché de consultas, expansión de navegaciones, traducción, generación de SQL, el proveedor ADO.NET, la base de datos, el lector de datos y el materializador hasta el change tracker. Abajo, SaveChanges recorre DetectChanges, el pipeline de actualización, los lotes de comandos, la transacción y la propagación de valores generados.</desc>
+<defs>
+<linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#030B14"/><stop offset="0.55" stop-color="#071C2C"/><stop offset="1" stop-color="#0C2E44"/></linearGradient>
+<radialGradient id="halo" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#2DD4BF" stop-opacity="0.16"/><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/></radialGradient>
+<pattern id="rejilla" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#FFFFFF" stroke-opacity="0.035"/></pattern>
+<linearGradient id="trazo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2DD4BF"/><stop offset="0.5" stop-color="#38BDF8"/><stop offset="1" stop-color="#A78BFA"/></linearGradient>
+<linearGradient id="trazo2" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#F472B6"/><stop offset="1" stop-color="#FB923C"/></linearGradient>
+<marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7DD3FC"/></marker>
+<marker id="flecha2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#F9A8D4"/></marker>
+<filter id="sombra" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+</defs>
+<rect width="1600" height="980" fill="url(#fondo)"/><rect width="1600" height="980" fill="url(#rejilla)"/><rect width="1600" height="980" fill="url(#halo)"/>
+
+<text x="56" y="74" font-size="44" font-weight="700" fill="#F8FAFC">Anatomía de EF Core</text>
+<text x="56" y="110" font-size="19" fill="#99F6E4">Dos viajes por el interior del ORM: una consulta que baja a la base de datos y un SaveChanges que sube los cambios</text>
+
+<!-- Carril superior: consulta -->
+<text x="56" y="170" font-size="15" font-weight="700" fill="#38BDF8" letter-spacing="2">① CONSULTA · LINQ → SQL → OBJETOS</text>
+<line x1="56" y1="182" x2="1544" y2="182" stroke="url(#trazo)" stroke-opacity="0.5"/>
+
+<g font-size="13" fill="#E2E8F0">
+<g filter="url(#sombra)">
+<rect x="56" y="206" width="200" height="122" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="296" y="206" width="200" height="122" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="536" y="206" width="200" height="122" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="776" y="206" width="200" height="122" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="1016" y="206" width="200" height="122" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="1256" y="206" width="288" height="122" rx="14" fill="#0B2235" stroke="#2DD4BF" stroke-width="1.6"/>
+</g>
+<text x="76" y="236" font-size="15" font-weight="700" fill="#F8FAFC">1 · Tu LINQ</text>
+<text x="76" y="262">db.Pedidos</text><text x="76" y="280">  .Where(p =&gt; p.Total &gt; x)</text><text x="76" y="298">  .ToListAsync()</text>
+<text x="316" y="236" font-size="15" font-weight="700" fill="#F8FAFC">2 · Árbol + caché</text>
+<text x="316" y="262">Se extraen parámetros</text><text x="316" y="280">(x → @x) y se busca la</text><text x="316" y="298">consulta ya compilada</text>
+<text x="556" y="236" font-size="15" font-weight="700" fill="#F8FAFC">3 · Preproceso</text>
+<text x="556" y="262">Expansión de navegaciones,</text><text x="556" y="280">filtros globales, Include</text><text x="556" y="298">y simplificación</text>
+<text x="796" y="236" font-size="15" font-weight="700" fill="#F8FAFC">4 · Traducción</text>
+<text x="796" y="262">Operadores LINQ →</text><text x="796" y="280">SelectExpression con</text><text x="796" y="298">métodos del proveedor</text>
+<text x="1036" y="236" font-size="15" font-weight="700" fill="#F8FAFC">5 · SQL</text>
+<text x="1036" y="262">QuerySqlGenerator</text><text x="1036" y="280">escribe el dialecto:</text><text x="1036" y="298">T-SQL, SQLite, PG…</text>
+<text x="1276" y="236" font-size="15" font-weight="700" fill="#F8FAFC">6 · ADO.NET</text>
+<text x="1276" y="262">DbCommand + DbParameter</text><text x="1276" y="280">por SqlClient, Microsoft.Data.Sqlite,</text><text x="1276" y="298">Npgsql… con reintentos</text>
+</g>
+<g stroke="#7DD3FC" stroke-width="2" marker-end="url(#flecha)">
+<line x1="258" y1="267" x2="292" y2="267"/><line x1="498" y1="267" x2="532" y2="267"/><line x1="738" y1="267" x2="772" y2="267"/>
+<line x1="978" y1="267" x2="1012" y2="267"/><line x1="1218" y1="267" x2="1252" y2="267"/>
+</g>
+
+<!-- Base de datos -->
+<g transform="translate(1340,372)" filter="url(#sombra)">
+<ellipse cx="60" cy="16" rx="60" ry="16" fill="#0C2E44" stroke="url(#trazo)" stroke-width="2.5"/>
+<path d="M0 16 V124 A60 16 0 0 0 120 124 V16" fill="#0C2E44" stroke="url(#trazo)" stroke-width="2.5"/>
+<path d="M0 52 A60 16 0 0 0 120 52 M0 88 A60 16 0 0 0 120 88" fill="none" stroke="#2DD4BF" stroke-opacity="0.45" stroke-width="2"/>
+<text x="60" y="80" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">Base de</text>
+<text x="60" y="98" font-size="15" font-weight="700" fill="#F8FAFC" text-anchor="middle">datos</text>
+</g>
+<path d="M1400 330 V366" stroke="#7DD3FC" stroke-width="2" marker-end="url(#flecha)"/>
+
+<g font-size="13" fill="#E2E8F0">
+<g filter="url(#sombra)">
+<rect x="1016" y="400" width="268" height="104" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="696" y="400" width="268" height="104" rx="14" fill="#0B2235" stroke="#38BDF8" stroke-width="1.6"/>
+<rect x="376" y="400" width="268" height="104" rx="14" fill="#0B2235" stroke="#A78BFA" stroke-width="1.6"/>
+<rect x="56" y="400" width="268" height="104" rx="14" fill="#1A1238" stroke="#A78BFA" stroke-width="1.6"/>
+</g>
+<text x="1036" y="430" font-size="15" font-weight="700" fill="#F8FAFC">7 · DbDataReader</text>
+<text x="1036" y="456">Filas en flujo, una a una;</text><text x="1036" y="474">ToList las acumula, await foreach no</text>
+<text x="716" y="430" font-size="15" font-weight="700" fill="#F8FAFC">8 · Shaper</text>
+<text x="716" y="456">Delegado compilado que crea</text><text x="716" y="474">objetos y arma las navegaciones</text>
+<text x="396" y="430" font-size="15" font-weight="700" fill="#F8FAFC">9 · Resolución de identidad</text>
+<text x="396" y="456">Una sola instancia por clave</text><text x="396" y="474">dentro del mismo DbContext</text>
+<text x="76" y="430" font-size="15" font-weight="700" fill="#F8FAFC">10 · Change tracker</text>
+<text x="76" y="456">Guarda una instantánea de</text><text x="76" y="474">valores originales (si hay tracking)</text>
+</g>
+<g stroke="#7DD3FC" stroke-width="2" marker-end="url(#flecha)">
+<path d="M1336 452 H1288"/><line x1="1014" y1="452" x2="968" y2="452"/><line x1="694" y1="452" x2="648" y2="452"/><line x1="374" y1="452" x2="328" y2="452"/>
+</g>
+<text x="56" y="530" font-size="13" fill="#94A3B8">Con AsNoTracking los pasos 9 y 10 se omiten · la caché del paso 2 hace que la misma forma de consulta solo se compile una vez por proceso</text>
+
+<!-- Carril inferior: SaveChanges -->
+<text x="56" y="596" font-size="15" font-weight="700" fill="#F472B6" letter-spacing="2">② SAVECHANGES · OBJETOS → COMANDOS → BASE DE DATOS</text>
+<line x1="56" y1="608" x2="1544" y2="608" stroke="url(#trazo2)" stroke-opacity="0.5"/>
+
+<g font-size="13" fill="#E2E8F0">
+<g filter="url(#sombra)">
+<rect x="56" y="632" width="228" height="134" rx="14" fill="#2A0F22" stroke="#F472B6" stroke-width="1.6"/>
+<rect x="320" y="632" width="228" height="134" rx="14" fill="#2A0F22" stroke="#F472B6" stroke-width="1.6"/>
+<rect x="584" y="632" width="228" height="134" rx="14" fill="#2A0F22" stroke="#F472B6" stroke-width="1.6"/>
+<rect x="848" y="632" width="228" height="134" rx="14" fill="#2A160A" stroke="#FB923C" stroke-width="1.6"/>
+<rect x="1112" y="632" width="228" height="134" rx="14" fill="#2A160A" stroke="#FB923C" stroke-width="1.6"/>
+<rect x="1376" y="632" width="168" height="134" rx="14" fill="#0B2235" stroke="#2DD4BF" stroke-width="1.6"/>
+</g>
+<text x="76" y="662" font-size="15" font-weight="700" fill="#F8FAFC">A · DetectChanges</text>
+<text x="76" y="688">Compara cada entidad con</text><text x="76" y="706">su instantánea y marca</text><text x="76" y="724">Added / Modified / Deleted</text>
+<text x="340" y="662" font-size="15" font-weight="700" fill="#F8FAFC">B · Interceptores</text>
+<text x="340" y="688">SavingChanges: auditoría,</text><text x="340" y="706">fechas, borrado lógico,</text><text x="340" y="724">validaciones propias</text>
+<text x="604" y="662" font-size="15" font-weight="700" fill="#F8FAFC">C · Orden topológico</text>
+<text x="604" y="688">Principales antes que</text><text x="604" y="706">dependientes; cascadas</text><text x="604" y="724">y claves temporales</text>
+<text x="868" y="662" font-size="15" font-weight="700" fill="#F8FAFC">D · Lotes</text>
+<text x="868" y="688">ModificationCommand →</text><text x="868" y="706">INSERT/UPDATE/DELETE</text><text x="868" y="724">agrupados (MaxBatchSize)</text>
+<text x="1132" y="662" font-size="15" font-weight="700" fill="#F8FAFC">E · Transacción</text>
+<text x="1132" y="688">Implícita si hay más de</text><text x="1132" y="706">una sentencia; concurrencia</text><text x="1132" y="724">optimista comprobada</text>
+<text x="1396" y="662" font-size="15" font-weight="700" fill="#F8FAFC">F · Retorno</text>
+<text x="1396" y="688">Claves generadas,</text><text x="1396" y="706">rowversion… y</text><text x="1396" y="724">AcceptChanges</text>
+</g>
+<g stroke="#F9A8D4" stroke-width="2" marker-end="url(#flecha2)">
+<line x1="286" y1="699" x2="316" y2="699"/><line x1="550" y1="699" x2="580" y2="699"/><line x1="814" y1="699" x2="844" y2="699"/>
+<line x1="1078" y1="699" x2="1108" y2="699"/><line x1="1342" y1="699" x2="1372" y2="699"/>
+</g>
+
+<!-- Pie: estados -->
+<text x="56" y="830" font-size="15" font-weight="700" fill="#E2E8F0">Estados de una entidad en el change tracker</text>
+<g font-size="14" font-weight="700" text-anchor="middle">
+<rect x="56" y="850" width="150" height="40" rx="20" fill="#0B2235" stroke="#94A3B8"/><text x="131" y="876" fill="#CBD5E1">Detached</text>
+<rect x="256" y="850" width="150" height="40" rx="20" fill="#06281F" stroke="#34D399"/><text x="331" y="876" fill="#6EE7B7">Added</text>
+<rect x="456" y="850" width="150" height="40" rx="20" fill="#0B2235" stroke="#38BDF8"/><text x="531" y="876" fill="#7DD3FC">Unchanged</text>
+<rect x="656" y="850" width="150" height="40" rx="20" fill="#2A160A" stroke="#FB923C"/><text x="731" y="876" fill="#FDBA74">Modified</text>
+<rect x="856" y="850" width="150" height="40" rx="20" fill="#2A0F14" stroke="#F87171"/><text x="931" y="876" fill="#FCA5A5">Deleted</text>
+</g>
+<g stroke="#64748B" stroke-width="1.6" marker-end="url(#flecha)">
+<line x1="208" y1="870" x2="252" y2="870"/><line x1="408" y1="870" x2="452" y2="870"/><line x1="608" y1="870" x2="652" y2="870"/><line x1="808" y1="870" x2="852" y2="870"/>
+</g>
+<text x="1040" y="866" font-size="13" fill="#94A3B8">Add → Added · SaveChanges → Unchanged · cambiar una propiedad → Modified</text>
+<text x="1040" y="886" font-size="13" fill="#94A3B8">Remove → Deleted · SaveChanges → Detached · Attach/consulta → Unchanged</text>
+<text x="56" y="944" font-size="13" fill="#64748B">EF Core Atlas · capítulo 02 · simplificación didáctica de las clases reales (QueryCompiler, RelationalQueryTranslationPostprocessor, StateManager, CommandBatchPreparer)</text>
+</svg>

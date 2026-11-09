@@ -1,0 +1,167 @@
+nombre,version,familia,ambito,estado,descripcion,simbolo,etiqueta,poster
+DbContext y DbSet,1.0,modelado,N,GA,Unidad de trabajo y repositorio en una sola clase; punto de entrada de todo EF Core,Dc,DbContext,1
+Convenciones de modelado,1.0,modelado,N,GA,"Claves, relaciones, columnas y nulabilidad descubiertas a partir de las clases",Cv,Convenciones,1
+API fluida (ModelBuilder),1.0,modelado,N,GA,Configuración del modelo en OnModelCreating con prioridad sobre las anotaciones,Fl,API fluida,1
+Anotaciones de datos,1.0,modelado,N,GA,"[Key], [Required], [MaxLength], [Table]... sobre las propias clases",An,Anotaciones,0
+Propiedades de sombra,1.0,modelado,N,GA,Propiedades que existen en el modelo y en la tabla pero no en la clase .NET,Sh,Sombra,0
+Claves alternativas,1.0,modelado,R,GA,HasAlternateKey: restricción UNIQUE que puede ser destino de una FK,Ak,Clave|alterna,0
+Herencia TPH,1.0,modelado,R,GA,Tabla por jerarquía con columna discriminadora; estrategia por defecto,Th,TPH,0
+Migraciones con código,1.0,migraciones,R,GA,Up/Down en C# generados al comparar el modelo con la instantánea,Mg,Migraciones,1
+Seguimiento de cambios,1.0,guardado,N,GA,ChangeTracker con estados Added/Modified/Deleted/Unchanged/Detached,Ct,Change|Tracker,1
+SaveChanges por lotes,1.0,rendimiento,R,GA,Varias sentencias INSERT/UPDATE/DELETE en un solo viaje a la base de datos,Bt,Batching,0
+Include y ThenInclude,1.0,consultas,N,GA,Carga ansiosa de navegaciones con JOIN,In,Include,1
+FromSql (SQL crudo),1.0,consultas,R,GA,Consultas SQL propias materializadas como entidades y componibles con LINQ,Fs,FromSql,0
+AsNoTracking,1.0,consultas,N,GA,Consultas de solo lectura sin registrar entidades en el change tracker,Nt,NoTracking,0
+Evaluación mixta cliente/servidor,1.0,consultas,N,GA,"Lo no traducible se evaluaba en memoria en silencio; eliminado en 3.0",Ce,Eval.|cliente,0
+Concurrencia optimista,1.0,guardado,R,GA,[ConcurrencyCheck] y [Timestamp]/rowversion con DbUpdateConcurrencyException,Oc,Concurrencia,0
+Transacciones explícitas,1.0,guardado,R,GA,BeginTransaction/Commit/Rollback sobre la conexión del contexto,Tx,Transacciones,0
+Proveedor SQL Server,1.0,proveedores,S,GA,Microsoft.EntityFrameworkCore.SqlServer sobre Microsoft.Data.SqlClient,Ss,SQL Server,0
+Proveedor SQLite,1.0,proveedores,L,GA,Microsoft.EntityFrameworkCore.Sqlite sobre Microsoft.Data.Sqlite,Sl,SQLite,0
+Proveedor InMemory,1.0,proveedores,N,GA,Base de datos en memoria para pruebas; no es relacional y hoy se desaconseja,Im,InMemory,0
+Ingeniería inversa (scaffold),1.0,herramientas,R,GA,dotnet ef dbcontext scaffold genera contexto y entidades desde una base existente,Sc,Scaffold,0
+Inyección de dependencias,1.0,herramientas,N,GA,AddDbContext registra el contexto con vida Scoped en el contenedor de .NET,Di,AddDbContext,0
+Secuencias y HiLo,1.0,proveedores,S,GA,HasSequence y UseHiLo para generar claves en bloque desde una secuencia,Hl,HiLo,0
+DbSet.Find,1.1,consultas,N,GA,Busca por clave primero en el change tracker y solo después en la base,Fd,Find,0
+Carga explícita,1.1,consultas,N,GA,Entry(e).Reference(...).Load() y Collection(...).Load() bajo demanda,Ex,Carga|explícita,1
+Campos de respaldo,1.1,modelado,N,GA,EF lee y escribe campos privados en lugar de propiedades (encapsulación DDD),Bf,Backing|fields,0
+Resiliencia de conexión,1.1,diagnostico,R,GA,EnableRetryOnFailure y estrategias de ejecución para errores transitorios,Rr,Reintentos,0
+Tablas optimizadas en memoria,1.1,proveedores,S,GA,IsMemoryOptimized para tablas In-Memory OLTP de SQL Server,Mo,In-Memory|OLTP,0
+Reload y GetDatabaseValues,1.1,guardado,N,GA,Releer una entidad o sus valores originales desde la base,Rl,Reload,0
+Tipos propios,2.0,modelado,N,GA,OwnsOne: tipos sin identidad propia guardados en la tabla del dueño,Ow,Owned|types,1
+División de tablas,2.0,modelado,R,GA,Varias entidades comparten una misma tabla (table splitting),Ts,Table|splitting,0
+Filtros de consulta globales,2.0,consultas,N,GA,HasQueryFilter: borrado lógico y multitenencia aplicados a todas las consultas,Gq,Filtros|globales,1
+Agrupación de DbContext,2.0,rendimiento,N,GA,AddDbContextPool reutiliza instancias y evita el costo de inicialización,Pl,Pooling,1
+Consultas compiladas,2.0,rendimiento,N,GA,EF.CompileQuery/CompileAsyncQuery evitan recompilar el árbol de expresión,Cq,Compiled|query,0
+Interpolación segura en FromSql,2.0,consultas,R,GA,FromSql($"...{x}") convierte cada hueco en un DbParameter,Ip,SQL|interpolado,0
+EF.Functions.Like,2.0,consultas,R,GA,Primera función de EF.Functions: LIKE traducido literalmente,Lk,Like,0
+Funciones escalares mapeadas,2.0,consultas,R,GA,HasDbFunction: un método .NET se traduce a una función de la base,Fn,DbFunction,0
+IEntityTypeConfiguration,2.0,modelado,N,GA,Configuración por entidad en clases separadas y ApplyConfigurationsFromAssembly,Ec,Config.|por clase,0
+Carga diferida,2.1,consultas,N,GA,Proxies o ILazyLoader cargan una navegación al tocarla por primera vez,Ll,Lazy|loading,1
+Conversiones de valores,2.1,modelado,N,GA,"HasConversion: enums como texto, IDs fuertemente tipados, cifrado...",Vc,Value|converter,1
+Siembra con HasData,2.1,migraciones,R,GA,Datos de referencia que viajan con las migraciones,Hd,HasData,1
+Tipos de consulta,2.1,modelado,N,GA,Query types para vistas y resultados sin clave; desde 3.0 son entidades sin clave,Qt,Query|types,0
+Constructores con parámetros,2.1,modelado,N,GA,EF materializa entidades usando constructores con parámetros,Cp,Constructores,0
+Eventos Tracked y StateChanged,2.1,diagnostico,N,GA,ChangeTracker.Tracked y StateChanged para auditoría y lógica de dominio,Ev,Eventos|tracker,0
+System.Transactions,2.1,guardado,R,GA,TransactionScope y transacciones ambientales con los proveedores que las soportan,Ta,Transaction|Scope,0
+GroupBy traducido a SQL,2.1,consultas,R,GA,GroupBy con agregados traducido a GROUP BY en el servidor,Gb,GroupBy,0
+Datos espaciales,2.2,modelado,R,GA,Geometrías NetTopologySuite traducidas a geography/geometry y PostGIS,Sp,Espacial,1
+Colecciones de tipos propios,2.2,modelado,N,GA,OwnsMany para colecciones de objetos de valor,Om,OwnsMany,0
+TagWith,2.2,diagnostico,R,GA,Comentarios en el SQL generado para rastrear su origen en el código,Tg,TagWith,0
+Fin de la evaluación implícita en cliente,3.0,consultas,N,GA,Lo que no se traduce lanza excepción en lugar de ejecutarse en memoria,Ne,Sin eval.|cliente,1
+Nueva canalización LINQ,3.0,consultas,N,GA,Una consulta LINQ produce exactamente una sentencia SQL,Lq,Pipeline|LINQ,0
+Proveedor Azure Cosmos DB,3.0,proveedores,C,GA,Primer proveedor NoSQL oficial: documentos JSON con particiones,Co,Cosmos DB,1
+Interceptores,3.0,diagnostico,N,GA,"DbCommandInterceptor, DbConnectionInterceptor y DbTransactionInterceptor",It,Interceptores,1
+Tipos de referencia anulables,3.0,modelado,N,GA,string? y string determinan si la columna admite NULL,Nr,string?,0
+Flujos asíncronos,3.0,consultas,N,GA,AsAsyncEnumerable y await foreach sobre resultados,As,await|foreach,0
+Entidades sin clave,3.0,modelado,N,GA,"HasNoKey para vistas, funciones y SQL crudo de solo lectura",Nk,Keyless,0
+dotnet-ef como herramienta global,3.0,herramientas,T,GA,La CLI sale del SDK y se instala con dotnet tool install,Ef,dotnet-ef,0
+LTS con .NET Standard 2.0,3.1,herramientas,N,GA,EF Core 3.1 vuelve a .NET Standard 2.0 y es la primera versión LTS,Lt,3.1 LTS,1
+Muchos a muchos sin entidad de unión,5.0,modelado,R,GA,Navegaciones de colección en ambos lados y tabla de unión implícita,Mm,Muchos a|muchos,1
+Herencia TPT,5.0,modelado,R,GA,Tabla por tipo con JOIN entre tabla base y tablas derivadas,Tt,TPT,1
+Include filtrado,5.0,consultas,N,GA,"Include(b => b.Posts.Where(...).OrderBy(...).Take(n))",If,Include|filtrado,1
+Consultas divididas,5.0,consultas,R,GA,AsSplitQuery evita la explosión cartesiana con varias colecciones,Sq,Split|query,1
+ToQueryString,5.0,diagnostico,R,GA,Obtiene el SQL de un IQueryable sin ejecutarlo,Qs,ToQuery|String,0
+LogTo,5.0,diagnostico,N,GA,Registro simple a consola o a cualquier Action<string>,Lg,LogTo,0
+Vistas de depuración,5.0,diagnostico,N,GA,ChangeTracker.DebugView y Model.DebugView para inspeccionar el estado,Dv,DebugView,0
+Interceptores de SaveChanges,5.0,diagnostico,N,GA,ISaveChangesInterceptor para auditoría y lógica transversal,Si,SaveChanges|Interceptor,0
+Colaciones,5.0,modelado,R,GA,UseCollation y EF.Functions.Collate,Cl,Colación,0
+Funciones con valores de tabla,5.0,consultas,R,GA,TVF mapeadas y componibles con LINQ,Tv,TVF,0
+Tipos de entidad compartidos,5.0,modelado,N,GA,"Property bags: Dictionary<string, object>" como entidad,Pb,Property|bags,0
+Atributo Index,5.0,modelado,R,GA,[Index(nameof(...))] declara índices sobre la clase,Ix,[Index],0
+AddDbContextFactory,5.0,herramientas,N,GA,IDbContextFactory para Blazor y vida corta controlada,Df,Context|factory,0
+ChangeTracker.Clear,5.0,guardado,N,GA,Desconecta todas las entidades de golpe,Cc,Clear,0
+NoTrackingWithIdentityResolution,5.0,consultas,N,GA,Sin seguimiento pero con una sola instancia por clave,Ir,Identity|resolution,0
+Tablas temporales,6.0,proveedores,S,GA,IsTemporal y TemporalAsOf/All/Between para historial de SQL Server,Tm,Temporal,1
+Modelos compilados,6.0,rendimiento,N,GA,dotnet ef dbcontext optimize genera el modelo en código y reduce el arranque,Cm,Compiled|model,1
+Configuración previa a convenciones,6.0,modelado,N,GA,ConfigureConventions: reglas por tipo .NET para todo el modelo,Pc,Pre-|convención,0
+Paquetes de migración,6.0,migraciones,R,GA,dotnet ef migrations bundle: ejecutable autónomo para CI/CD,Mb,Bundle,1
+"Atributos Unicode, Precision y EntityTypeConfiguration",6.0,modelado,N,GA,Más configuración disponible como atributos,Pa,[Precision],0
+Columnas dispersas,6.0,proveedores,S,GA,IsSparse para columnas SPARSE de SQL Server,Sr,Sparse,0
+AddSqlServer y similares,6.0,herramientas,N,GA,Registro en una línea para Minimal APIs: AddSqlServer<TContext>(cadena),Am,AddSqlServer,0
+Fábrica de contextos agrupados,6.0,rendimiento,N,GA,AddPooledDbContextFactory combina fábrica y pooling,Pf,Pooled|factory,0
+Mejoras de rendimiento TechEmpower,6.0,rendimiento,N,GA,Consultas hasta un 70 % más rápidas en el benchmark Fortunes,Te,+70 %,0
+ExecuteUpdate y ExecuteDelete,7.0,guardado,R,GA,UPDATE y DELETE masivos traducidos desde LINQ sin cargar entidades,Xu,Execute|Update,1
+Columnas JSON,7.0,json,R,GA,ToJson sobre tipos propios: un agregado completo en una columna,Js,ToJson,1
+Herencia TPC,7.0,modelado,R,GA,Tabla por tipo concreto sin tabla base,Tc,TPC,1
+Procedimientos almacenados para CUD,7.0,guardado,R,GA,InsertUsingStoredProcedure / Update... / Delete...,Sx,Stored|procs,0
+Interceptores de materialización,7.0,diagnostico,N,GA,IMaterializationInterceptor e IQueryExpressionInterceptor,Mi,Material.|interceptor,0
+Convenciones personalizadas,7.0,modelado,N,GA,Añadir/quitar convenciones con ConfigureConventions,Cu,Convención|propia,0
+Plantillas T4 para scaffolding,7.0,herramientas,R,GA,dotnet new ef-templates personaliza el código generado,T4,T4,0
+SaveChanges más eficiente,7.0,rendimiento,R,GA,Menos viajes y sin transacción para una sola sentencia,Se,SaveChanges|rápido,0
+División de entidades,7.0,modelado,R,GA,SplitToTable: una entidad repartida en varias tablas,Es,Entity|splitting,0
+Disparadores en SQL Server,7.0,proveedores,S,GA,HasTrigger para que EF evite OUTPUT incompatible con triggers,Tr,Triggers,0
+SqlQuery de escalares,7.0,consultas,R,GA,Database.SqlQuery<int>($"...") devuelve tipos primitivos,Sv,SqlQuery|escalar,0
+Tipos complejos,8.0,modelado,N,GA,ComplexProperty: objetos de valor con semántica de valor y sin identidad,Cx,Complex|types,1
+Colecciones primitivas,8.0,json,R,GA,"List<int>, string[] guardadas como JSON y consultables",Pr,Colección|primitiva,1
+SqlQuery con tipos no mapeados,8.0,consultas,R,GA,Database.SqlQuery<T> materializa DTO que no están en el modelo,Su,SqlQuery|DTO,1
+Carga diferida sin seguimiento,8.0,consultas,N,GA,Lazy loading también en consultas AsNoTracking,Ln,Lazy|NoTracking,0
+HierarchyId,8.0,proveedores,S,GA,Tipo hierarchyid de SQL Server para árboles,Hi,HierarchyId,0
+DateOnly y TimeOnly,8.0,proveedores,S,GA,Mapeo nativo a date y time en SQL Server,Do,DateOnly,0
+JSON en SQLite,8.0,json,L,GA,Columnas JSON y colecciones primitivas sobre json_each,Jl,JSON|SQLite,0
+Valores centinela,8.0,modelado,N,GA,HasSentinel: qué valor CLR significa no establecido,Sn,Sentinel,0
+Colecciones parametrizadas con JSON,8.0,consultas,R,GA,ids.Contains(x) como un único parámetro JSON con OPENJSON,Oj,OPENJSON,0
+Atributo DeleteBehavior,8.0,modelado,R,GA,[DeleteBehavior] declara el comportamiento en cascada en la clase,Db,[Delete|Behavior],0
+Proveedor Cosmos reescrito,9.0,proveedores,C,GA,"Consultas por partición, ReadItem automático y LINQ mucho más completo",Cr,Cosmos|v2,1
+Claves de partición jerárquicas,9.0,proveedores,C,GA,Hasta tres niveles de clave de partición en Cosmos DB,Hp,Partición|jerárquica,0
+Búsqueda vectorial en Cosmos (preview),9.0,ia,C,GA,VectorDistance e índices vectoriales experimentales,Vp,Vector|Cosmos,0
+Consultas precompiladas y NativeAOT,9.0,rendimiento,N,GA,Interceptores de C# generan el código de la consulta en compilación (experimental),Ao,AOT,1
+Modelos compilados automáticos,9.0,rendimiento,N,GA,Si existe el modelo compilado se usa sin UseModel,Ac,Auto|compiled,0
+UseSeeding y UseAsyncSeeding,9.0,migraciones,R,GA,Siembra con lógica arbitraria ejecutada por EnsureCreated y Migrate,Us,UseSeeding,1
+Bloqueo de migraciones concurrentes,9.0,migraciones,R,GA,Migrate adquiere un bloqueo para que dos instancias no migren a la vez,Ml,Lock,0
+Advertencia de cambios pendientes,9.0,migraciones,R,GA,PendingModelChangesWarning lanza si el modelo no coincide con la última migración,Pw,Pending|changes,0
+EF.Parameter,9.0,consultas,N,GA,Fuerza que un valor se envíe como parámetro y no como constante,Ep,EF.Parameter,0
+Order y OrderDescending,9.0,consultas,N,GA,Traducción de los operadores de .NET 7,Od,Order(),0
+GREATEST y LEAST,9.0,consultas,R,GA,Math.Max/Min traducidos a funciones del servidor,Gl,GREATEST,0
+Poda de tablas y proyecciones,9.0,rendimiento,R,GA,El SQL generado omite JOIN y columnas innecesarias,Pt,Poda|SQL,0
+Colecciones primitivas de solo lectura,9.0,json,R,GA,IReadOnlyList<T> y ReadOnlyCollection<T> mapeadas,Ro,ReadOnly|colección,0
+Factor de relleno,9.0,proveedores,S,GA,HasFillFactor en claves e índices de SQL Server,Ff,Fill|factor,0
+Tipos complejos en GroupBy y ExecuteUpdate,9.0,modelado,R,GA,Los tipos complejos participan en agrupación y actualización masiva,Cg,Complex|GroupBy,0
+Semántica C# en comparaciones anulables,9.0,consultas,R,GA,a != b con NULL se comporta como en C#,Sm,Nulos|como C#,0
+Integración con MSBuild,9.0,herramientas,T,GA,EFOptimizeContext genera modelo y consultas al compilar o publicar,Mx,MSBuild,0
+Bloqueo de E/S síncrona en Cosmos,9.0,proveedores,C,GA,ToList y SaveChanges síncronos lanzan excepción con Cosmos,Sy,Cosmos|async,0
+Búsqueda vectorial en SQL Server,10,ia,S,GA,SqlVector<float> y EF.Functions.VectorDistance sobre el tipo vector,Vs,Vector|SQL,1
+Tipo json de SQL Server 2025,10,json,S,GA,Columnas json nativas con UseAzureSql o nivel de compatibilidad 170,Jt,json|nativo,1
+Tipos complejos en JSON,10,json,R,GA,ComplexProperty(...).ToJson() y ComplexCollection reemplazan a OwnsOne/OwnsMany con ToJson,Cj,Complex|ToJson,1
+Tipos complejos opcionales y struct,10,modelado,N,GA,Address? y struct como tipos complejos,Op,Complex|opcional,0
+Filtros de consulta con nombre,10,consultas,N,GA,Varios HasQueryFilter por entidad e IgnoreQueryFilters selectivo,Nf,Filtros|con nombre,1
+LeftJoin y RightJoin,10,consultas,R,GA,Operadores de .NET 10 traducidos a LEFT JOIN y RIGHT JOIN,Lj,LeftJoin,1
+Colecciones parametrizadas por parámetros múltiples,10,consultas,R,GA,"IN (@ids1, @ids2...) con relleno; modo configurable",Mp,IN (@p1…),0
+ExecuteUpdate con lambda normal,10,guardado,R,GA,Setters condicionales sin construir árboles de expresión,Xl,Execute|Update λ,0
+ExecuteUpdate sobre JSON,10,json,R,GA,Actualización masiva de propiedades dentro de columnas JSON,Xj,Update|JSON,0
+Búsqueda de texto completo en Cosmos,10,ia,C,GA,FullTextContains / FullTextScore e índices de texto,Ft,Full-text|Cosmos,0
+Búsqueda híbrida en Cosmos,10,ia,C,GA,EF.Functions.Rrf combina texto completo y vectores,Hy,RRF,0
+Restricciones por defecto con nombre,10,proveedores,S,GA,HasDefaultValueSql(sql nombre) y UseNamedDefaultConstraints,Dn,DF_ con|nombre,0
+Constantes ocultas en los registros,10,diagnostico,N,GA,Los valores insertados como constantes se registran como ?,Rd,Logs|redactados,0
+Analizador de SQL concatenado,10,diagnostico,R,GA,Advertencia al concatenar texto dentro de FromSqlRaw y similares,Az,Analizador|SQLi,0
+Nombres de parámetros simplificados,10,diagnostico,R,GA,@city en lugar de @__city_0,Pn,@nombre,0
+Orden coherente en consultas divididas,10,consultas,R,GA,Las subconsultas de split query repiten el ORDER BY completo,Oq,Split|ordenado,0
+AUTOINCREMENT opcional en SQLite,10,proveedores,L,GA,Se puede desactivar y funciona con conversiones,Ai,AUTO|INCREMENT,0
+FullJoin,11,consultas,R,RC,Operador de .NET 11 traducido a FULL JOIN,Fj,FullJoin,1
+MaxBy y MinBy,11,consultas,N,RC,Devuelven el elemento con el valor máximo o mínimo de una clave,Mn,MaxBy,1
+SQL más limpio para navegaciones a uno,11,rendimiento,R,RC,Sin JOIN innecesarios en split queries ni claves redundantes en ORDER BY,Jo,JOIN|podado,0
+Eliminación de CAST inútiles,11,rendimiento,R,RC,CAST a su propio tipo eliminado para que se usen los índices,Nc,Sin CAST,0
+VECTOR_SEARCH e índices vectoriales,11,ia,S,RC,HasVectorIndex y VectorSearch().WithApproximate() para ANN,Vx,VECTOR|SEARCH,1
+Vectores no cargados por defecto,11,rendimiento,S,RC,Las columnas SqlVector se omiten del SELECT de entidades,Vn,Vector|lazy,0
+Texto completo en migraciones,11,ia,S,RC,HasFullTextCatalog y HasFullTextIndex gestionados por migraciones,Fc,Full-text|catálogo,0
+FreeTextTable y ContainsTable,11,ia,S,RC,Funciones de tabla con puntuación de relevancia,Fr,FREETEXT|TABLE,0
+JSON_CONTAINS y JsonPathExists,11,json,S,RC,Contains sobre colecciones JSON y funciones JSON de SQL Server 2025,Jc,JSON_|CONTAINS,1
+Índices JSON,11,json,S,RC,CREATE JSON INDEX sobre rutas dentro de tipos complejos,Ji,JSON|INDEX,0
+Tipos complejos con TPT y TPC,11,modelado,R,RC,Tipos complejos y columnas JSON en jerarquías TPT/TPC,Ck,Complex|TPT/TPC,1
+Claves e índices en tipos complejos,11,modelado,N,RC,HasKey(c => c.Id.Value) y HasIndex(c => c.Address.PostalCode),Kc,Claves en|complejos,0
+Configuración encadenada de tipos complejos,11,modelado,N,RC,Property(e => e.Details.Description) sin ComplexProperty intermedio,Ch,Lambda|encadenada,0
+Periodos temporales como propiedades CLR,11,proveedores,S,RC,PeriodStart y PeriodEnd como propiedades normales,Pp,Periodos|CLR,0
+DateTrunc y DateTimeOffset,11,proveedores,S,RC,"EF.Functions.DateTrunc, ToOffset, UtcDateTime traducidos",Dt,DATE|TRUNC,0
+Tipos complejos en Cosmos,11,proveedores,C,RC,Objetos y arreglos anidados con semántica de valor,Cy,Complex|Cosmos,0
+Lotes transaccionales en Cosmos,11,guardado,C,RC,SaveChanges agrupa por partición en lotes atómicos,Lb,Batch|Cosmos,0
+Ejecución masiva en Cosmos,11,rendimiento,C,RC,BulkExecutionEnabled para alto rendimiento de escritura,Bk,Bulk|Cosmos,0
+Tokens de sesión en Cosmos,11,proveedores,C,RC,GetSessionToken/UseSessionToken para lectura de las propias escrituras,Tk,Session|token,0
+Cosmos con System.Text.Json,11,proveedores,C,RC,Adiós a Newtonsoft.Json y a __jObject,Sj,STJ|Cosmos,0
+Excluir FK de migraciones,11,migraciones,R,RC,ExcludeForeignKeyFromMigrations mantiene la relación sin restricción,Xf,FK sin|restricción,0
+Última migración en la instantánea,11,migraciones,R,RC,El snapshot registra el ID para provocar conflictos de fusión útiles,Ls,Snapshot|con ID,1
+database update --add,11,migraciones,T,RC,"Crea, compila con Roslyn y aplica una migración en un paso",Ua,update|--add,0
+Archivo dotnet-ef.json,11,herramientas,T,RC,.config/dotnet-ef.json con opciones por defecto para la CLI,Cf,dotnet-ef|.json,1
+Contexto comodín en la CLI,11,herramientas,T,RC,"--context ""*"" para list, script, update y drop",Wc,--context *,0
+migrations remove --offline,11,herramientas,T,RC,Quitar una migración sin conectarse a la base,Of,--offline,0
+group_concat ordenado en SQLite,11,proveedores,L,RC,string.Join con OrderBy dentro del agregado,Gc,group_|concat,0
+Compatibilidad 160 por defecto,11,proveedores,S,RC,UseSqlServer asume SQL Server 2022 (LEAST/GREATEST),Lv,Nivel|160,0
+Excepción en consultas divididas inconsistentes,11,consultas,R,RC,DbQueryConcurrencyException en lugar de colecciones vacías silenciosas,Qc,Split|seguro,0
