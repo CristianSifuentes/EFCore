@@ -1,0 +1,451 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 1262" width="1366" height="1262" font-family="Segoe UI, Inter, Helvetica Neue, Arial, sans-serif" role="img" aria-labelledby="pt">
+<title id="pt">Tabla periódica de las características de EF Core, edición noviembre 2026</title>
+<defs><linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#030B14"/><stop offset="0.55" stop-color="#071C2C"/><stop offset="1" stop-color="#0C2E44"/></linearGradient><radialGradient id="halo" cx="0.85" cy="0.1" r="0.7"><stop offset="0" stop-color="#2DD4BF" stop-opacity="0.22"/><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/></radialGradient><radialGradient id="halo2" cx="0.1" cy="0.95" r="0.6"><stop offset="0" stop-color="#A78BFA" stop-opacity="0.18"/><stop offset="1" stop-color="#A78BFA" stop-opacity="0"/></radialGradient><pattern id="rejilla" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#FFFFFF" stroke-opacity="0.035"/></pattern><linearGradient id="trazo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2DD4BF"/><stop offset="0.5" stop-color="#38BDF8"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs>
+<rect width="1366" height="1262" fill="url(#fondo)"/><rect width="1366" height="1262" fill="url(#rejilla)"/><rect width="1366" height="1262" fill="url(#halo)"/><rect width="1366" height="1262" fill="url(#halo2)"/>
+<text x="48" y="80" font-size="48" font-weight="700" fill="#F8FAFC">Tabla periódica de EF Core</text>
+<text x="48" y="118" font-size="19" fill="#99F6E4">46 elementos esenciales de 166 catalogados · cada columna es una versión, de EF Core 1.0 (2016) a EF Core 11 (2026) · edición noviembre 2026</text>
+<rect x="48" y="146" width="16" height="16" rx="4" fill="#A78BFA"/>
+<text x="72" y="159" font-size="15" fill="#E2E8F0">Modelado</text>
+<rect x="298" y="146" width="16" height="16" rx="4" fill="#38BDF8"/>
+<text x="322" y="159" font-size="15" fill="#E2E8F0">Consultas LINQ</text>
+<rect x="548" y="146" width="16" height="16" rx="4" fill="#F472B6"/>
+<text x="572" y="159" font-size="15" fill="#E2E8F0">Guardado y concurrencia</text>
+<rect x="798" y="146" width="16" height="16" rx="4" fill="#FB923C"/>
+<text x="822" y="159" font-size="15" fill="#E2E8F0">Migraciones y esquema</text>
+<rect x="1048" y="146" width="16" height="16" rx="4" fill="#F87171"/>
+<text x="1072" y="159" font-size="15" fill="#E2E8F0">Rendimiento y AOT</text>
+<rect x="48" y="172" width="16" height="16" rx="4" fill="#FACC15"/>
+<text x="72" y="185" font-size="15" fill="#E2E8F0">JSON y documentos</text>
+<rect x="298" y="172" width="16" height="16" rx="4" fill="#2DD4BF"/>
+<text x="322" y="185" font-size="15" fill="#E2E8F0">Proveedores</text>
+<rect x="548" y="172" width="16" height="16" rx="4" fill="#CBD5E1"/>
+<text x="572" y="185" font-size="15" fill="#E2E8F0">Diagnóstico y resiliencia</text>
+<rect x="798" y="172" width="16" height="16" rx="4" fill="#60A5FA"/>
+<text x="822" y="185" font-size="15" fill="#E2E8F0">Herramientas y CLI</text>
+<rect x="1048" y="172" width="16" height="16" rx="4" fill="#34D399"/>
+<text x="1072" y="185" font-size="15" fill="#E2E8F0">Búsqueda e IA</text>
+<text x="107" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 1</text>
+<text x="107" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2016</text>
+<line x1="56" y1="270" x2="158" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(48,278)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Dc</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">DbContext</text>
+</g>
+<g transform="translate(48,406)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Cv</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Convenciones</text>
+</g>
+<g transform="translate(48,534)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Fl</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">API fluida</text>
+</g>
+<g transform="translate(48,662)">
+<rect width="118" height="118" rx="12" fill="#FB923C" fill-opacity="0.12" stroke="#FB923C" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FB923C" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.0</text>
+<text x="108" y="18" font-size="10" fill="#FB923C" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FB923C" text-anchor="middle">Mg</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Migraciones</text>
+</g>
+<g transform="translate(48,790)">
+<rect width="118" height="118" rx="12" fill="#F472B6" fill-opacity="0.12" stroke="#F472B6" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#F472B6" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.0</text>
+<text x="108" y="18" font-size="10" fill="#F472B6" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#F472B6" text-anchor="middle">Ct</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Change</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Tracker</text>
+</g>
+<g transform="translate(48,918)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.0</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">In</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Include</text>
+</g>
+<g transform="translate(48,1046)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">1.1</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Ex</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Carga</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">explícita</text>
+</g>
+<text x="235" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 2</text>
+<text x="235" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2017–18 · LTS</text>
+<line x1="184" y1="270" x2="286" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(176,278)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Ow</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Owned</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">types</text>
+</g>
+<g transform="translate(176,406)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.0</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Gq</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Filtros</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">globales</text>
+</g>
+<g transform="translate(176,534)">
+<rect width="118" height="118" rx="12" fill="#F87171" fill-opacity="0.12" stroke="#F87171" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#F87171" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.0</text>
+<text x="108" y="18" font-size="10" fill="#F87171" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#F87171" text-anchor="middle">Pl</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Pooling</text>
+</g>
+<g transform="translate(176,662)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.1</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Ll</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Lazy</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">loading</text>
+</g>
+<g transform="translate(176,790)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.1</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Vc</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Value</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">converter</text>
+</g>
+<g transform="translate(176,918)">
+<rect width="118" height="118" rx="12" fill="#FB923C" fill-opacity="0.12" stroke="#FB923C" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FB923C" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.1</text>
+<text x="108" y="18" font-size="10" fill="#FB923C" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FB923C" text-anchor="middle">Hd</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">HasData</text>
+</g>
+<g transform="translate(176,1046)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">2.2</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Sp</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Espacial</text>
+</g>
+<text x="363" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 3</text>
+<text x="363" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2019 · LTS</text>
+<line x1="312" y1="270" x2="414" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(304,278)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">3.0</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Ne</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Sin eval.</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">cliente</text>
+</g>
+<g transform="translate(304,406)">
+<rect width="118" height="118" rx="12" fill="#2DD4BF" fill-opacity="0.12" stroke="#2DD4BF" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#2DD4BF" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">3.0</text>
+<text x="108" y="18" font-size="10" fill="#2DD4BF" text-anchor="end">Cosmos DB</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#2DD4BF" text-anchor="middle">Co</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Cosmos DB</text>
+</g>
+<g transform="translate(304,534)">
+<rect width="118" height="118" rx="12" fill="#CBD5E1" fill-opacity="0.12" stroke="#CBD5E1" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#CBD5E1" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">3.0</text>
+<text x="108" y="18" font-size="10" fill="#CBD5E1" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#CBD5E1" text-anchor="middle">It</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Interceptores</text>
+</g>
+<g transform="translate(304,662)">
+<rect width="118" height="118" rx="12" fill="#60A5FA" fill-opacity="0.12" stroke="#60A5FA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#60A5FA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">3.1</text>
+<text x="108" y="18" font-size="10" fill="#60A5FA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#60A5FA" text-anchor="middle">Lt</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">3.1 LTS</text>
+</g>
+<text x="491" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 5</text>
+<text x="491" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2020</text>
+<line x1="440" y1="270" x2="542" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(432,278)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">5.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Mm</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Muchos a</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">muchos</text>
+</g>
+<g transform="translate(432,406)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">5.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Tt</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">TPT</text>
+</g>
+<g transform="translate(432,534)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">5.0</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">If</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Include</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">filtrado</text>
+</g>
+<g transform="translate(432,662)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">5.0</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Sq</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Split</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">query</text>
+</g>
+<text x="619" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 6</text>
+<text x="619" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2021 · LTS</text>
+<line x1="568" y1="270" x2="670" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(560,278)">
+<rect width="118" height="118" rx="12" fill="#2DD4BF" fill-opacity="0.12" stroke="#2DD4BF" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#2DD4BF" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">6.0</text>
+<text x="108" y="18" font-size="10" fill="#2DD4BF" text-anchor="end">SQL Server</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#2DD4BF" text-anchor="middle">Tm</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Temporal</text>
+</g>
+<g transform="translate(560,406)">
+<rect width="118" height="118" rx="12" fill="#F87171" fill-opacity="0.12" stroke="#F87171" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#F87171" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">6.0</text>
+<text x="108" y="18" font-size="10" fill="#F87171" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#F87171" text-anchor="middle">Cm</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Compiled</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">model</text>
+</g>
+<g transform="translate(560,534)">
+<rect width="118" height="118" rx="12" fill="#FB923C" fill-opacity="0.12" stroke="#FB923C" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FB923C" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">6.0</text>
+<text x="108" y="18" font-size="10" fill="#FB923C" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FB923C" text-anchor="middle">Mb</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Bundle</text>
+</g>
+<text x="747" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 7</text>
+<text x="747" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2022</text>
+<line x1="696" y1="270" x2="798" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(688,278)">
+<rect width="118" height="118" rx="12" fill="#F472B6" fill-opacity="0.12" stroke="#F472B6" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#F472B6" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">7.0</text>
+<text x="108" y="18" font-size="10" fill="#F472B6" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#F472B6" text-anchor="middle">Xu</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Execute</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Update</text>
+</g>
+<g transform="translate(688,406)">
+<rect width="118" height="118" rx="12" fill="#FACC15" fill-opacity="0.12" stroke="#FACC15" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FACC15" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">7.0</text>
+<text x="108" y="18" font-size="10" fill="#FACC15" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FACC15" text-anchor="middle">Js</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">ToJson</text>
+</g>
+<g transform="translate(688,534)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">7.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Tc</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">TPC</text>
+</g>
+<text x="875" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 8</text>
+<text x="875" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2023 · LTS</text>
+<line x1="824" y1="270" x2="926" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(816,278)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">8.0</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Cx</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Complex</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">types</text>
+</g>
+<g transform="translate(816,406)">
+<rect width="118" height="118" rx="12" fill="#FACC15" fill-opacity="0.12" stroke="#FACC15" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FACC15" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">8.0</text>
+<text x="108" y="18" font-size="10" fill="#FACC15" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FACC15" text-anchor="middle">Pr</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Colección</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">primitiva</text>
+</g>
+<g transform="translate(816,534)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">8.0</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Su</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">SqlQuery</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">DTO</text>
+</g>
+<text x="1003" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 9</text>
+<text x="1003" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2024</text>
+<line x1="952" y1="270" x2="1054" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(944,278)">
+<rect width="118" height="118" rx="12" fill="#2DD4BF" fill-opacity="0.12" stroke="#2DD4BF" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#2DD4BF" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">9.0</text>
+<text x="108" y="18" font-size="10" fill="#2DD4BF" text-anchor="end">Cosmos DB</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#2DD4BF" text-anchor="middle">Cr</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Cosmos</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">v2</text>
+</g>
+<g transform="translate(944,406)">
+<rect width="118" height="118" rx="12" fill="#F87171" fill-opacity="0.12" stroke="#F87171" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#F87171" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">9.0</text>
+<text x="108" y="18" font-size="10" fill="#F87171" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#F87171" text-anchor="middle">Ao</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">AOT</text>
+</g>
+<g transform="translate(944,534)">
+<rect width="118" height="118" rx="12" fill="#FB923C" fill-opacity="0.12" stroke="#FB923C" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FB923C" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">9.0</text>
+<text x="108" y="18" font-size="10" fill="#FB923C" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FB923C" text-anchor="middle">Us</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">UseSeeding</text>
+</g>
+<text x="1131" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 10</text>
+<text x="1131" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2025 · LTS</text>
+<line x1="1080" y1="270" x2="1182" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(1072,278)">
+<rect width="118" height="118" rx="12" fill="#34D399" fill-opacity="0.12" stroke="#34D399" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#34D399" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">10</text>
+<text x="108" y="18" font-size="10" fill="#34D399" text-anchor="end">SQL Server</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#34D399" text-anchor="middle">Vs</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Vector</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">SQL</text>
+</g>
+<g transform="translate(1072,406)">
+<rect width="118" height="118" rx="12" fill="#FACC15" fill-opacity="0.12" stroke="#FACC15" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FACC15" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">10</text>
+<text x="108" y="18" font-size="10" fill="#FACC15" text-anchor="end">SQL Server</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FACC15" text-anchor="middle">Jt</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">json</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">nativo</text>
+</g>
+<g transform="translate(1072,534)">
+<rect width="118" height="118" rx="12" fill="#FACC15" fill-opacity="0.12" stroke="#FACC15" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FACC15" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">10</text>
+<text x="108" y="18" font-size="10" fill="#FACC15" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FACC15" text-anchor="middle">Cj</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Complex</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">ToJson</text>
+</g>
+<g transform="translate(1072,662)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">10</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Nf</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Filtros</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">con nombre</text>
+</g>
+<g transform="translate(1072,790)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" />
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">10</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Lj</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">LeftJoin</text>
+</g>
+<text x="1259" y="238" font-size="21" font-weight="700" fill="#F8FAFC" text-anchor="middle">EF 11</text>
+<text x="1259" y="258" font-size="13" fill="#7DD3FC" text-anchor="middle">2026</text>
+<line x1="1208" y1="270" x2="1310" y2="270" stroke="url(#trazo)" stroke-opacity="0.6"/>
+<g transform="translate(1200,278)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Fj</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">FullJoin</text>
+</g>
+<g transform="translate(1200,406)">
+<rect width="118" height="118" rx="12" fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#38BDF8" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#38BDF8" text-anchor="end">Núcleo</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#38BDF8" text-anchor="middle">Mn</text>
+<text x="59" y="94" font-size="12.5" fill="#F1F5F9" text-anchor="middle">MaxBy</text>
+</g>
+<g transform="translate(1200,534)">
+<rect width="118" height="118" rx="12" fill="#34D399" fill-opacity="0.12" stroke="#34D399" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#34D399" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#34D399" text-anchor="end">SQL Server</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#34D399" text-anchor="middle">Vx</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">VECTOR</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">SEARCH</text>
+</g>
+<g transform="translate(1200,662)">
+<rect width="118" height="118" rx="12" fill="#FACC15" fill-opacity="0.12" stroke="#FACC15" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FACC15" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#FACC15" text-anchor="end">SQL Server</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FACC15" text-anchor="middle">Jc</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">JSON_</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">CONTAINS</text>
+</g>
+<g transform="translate(1200,790)">
+<rect width="118" height="118" rx="12" fill="#A78BFA" fill-opacity="0.12" stroke="#A78BFA" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#A78BFA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#A78BFA" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#A78BFA" text-anchor="middle">Ck</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Complex</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">TPT/TPC</text>
+</g>
+<g transform="translate(1200,918)">
+<rect width="118" height="118" rx="12" fill="#FB923C" fill-opacity="0.12" stroke="#FB923C" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#FB923C" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#FB923C" text-anchor="end">Relacional</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#FB923C" text-anchor="middle">Ls</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">Snapshot</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">con ID</text>
+</g>
+<g transform="translate(1200,1046)">
+<rect width="118" height="118" rx="12" fill="#60A5FA" fill-opacity="0.12" stroke="#60A5FA" stroke-width="1.6" stroke-dasharray="7 5"/>
+<rect x="1" y="1" width="116" height="26" rx="11" fill="#60A5FA" fill-opacity="0.10"/>
+<text x="10" y="18" font-size="11" fill="#CBD5E1">11</text>
+<text x="108" y="18" font-size="10" fill="#60A5FA" text-anchor="end">Herramientas</text>
+<text x="59" y="62" font-size="32" font-weight="700" fill="#60A5FA" text-anchor="middle">Cf</text>
+<text x="59" y="86" font-size="12.5" fill="#F1F5F9" text-anchor="middle">dotnet-ef</text>
+<text x="59" y="101" font-size="12.5" fill="#F1F5F9" text-anchor="middle">.json</text>
+</g>
+<text x="48" y="1226" font-size="14" fill="#94A3B8">Borde discontinuo: EF Core 11, en release candidate al 8 de noviembre de 2026. EF Core 4 no existe: la numeración saltó de 3.1 a 5.0. Fuente: data/caracteristicas.csv · guía no oficial.</text>
+</svg>
